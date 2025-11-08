@@ -1,0 +1,1 @@
+Click the View Site button, which will take you through some common SSRF examples, how to exploit them and even a simulation to see if you can take advantage of an SSRF vulnerability using what you've learnt.
