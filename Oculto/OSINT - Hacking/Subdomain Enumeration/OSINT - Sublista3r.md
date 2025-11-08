@@ -1,0 +1,1 @@
+Para acelerar o processo de descoberta de subdomínios OSINT , podemos automatizar os métodos acima com a ajuda de ferramentas como  o Sublist3r . Clique no botão "Visualizar Site" para abrir o site estático e execute a simulação do Sublist3r para descobrir um novo subdomínio que ajudará a responder à pergunta abaixo.
