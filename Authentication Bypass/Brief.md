@@ -1,0 +1,1 @@
+Nesta sala, aprenderemos sobre diferentes maneiras pelas quais os métodos de autenticação de sites podem ser burlados, contornados ou comprometidos. Essas vulnerabilidades podem ser extremamente críticas, pois frequentemente resultam em vazamentos de dados pessoais de clientes.
