@@ -1,0 +1,3 @@
+Os mecanismos de busca contêm trilhões de links para mais de um bilhão de sites, o que pode ser um excelente recurso para encontrar novos subdomínios. O uso de métodos de busca avançados em sites como o Google, como o filtro site: filter, pode refinar os resultados da pesquisa. Por exemplo, o site:*.domain.com -site:www.domain.com filtro mostraria apenas resultados que levam ao domínio domain.com, mas excluiria quaisquer links para www.domain.com; portanto, ele nos mostraria apenas os nomes de subdomínios pertencentes a domain.com.
+
+Acesse o Google e use o termo de pesquisa site:*.tryhackme.com -site:www.tryhackme.com, que deverá revelar um subdomínio para tryhackme.com; use esse subdomínio para responder à pergunta abaixo.
