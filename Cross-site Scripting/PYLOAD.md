@@ -68,6 +68,23 @@ htmlspecialchars
 Output Encoding / Escaping (codificação ou escape da saída)
 Converter os caracteres perigosos em entidades (< vira &lt;), para o browser os mostrar como texto. Transforma, mas não apaga nada. É a defesa principal do XSS. É o que faz o htmlspecialchars. O termo mais técnico é contextual output encoding.
 
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+import html
+
+app = FastAPI()
+
+# VULNERÁVEL — input direto no HTML (como o Low do DVWA)
+@app.get("/hello")
+def hello_vuln(name: str = ""):
+    return HTMLResponse(f"<pre>Hello {name}</pre>")
+
+# SEGURO — escapa a saída (como o Impossible)
+@app.get("/hello")
+def hello_safe(name: str = ""):
+    return HTMLResponse(f"<pre>Hello {html.escape(name)}</pre>")
+
+
 # ───── XSS DOM (via #, não passa no servidor) ─────
 #<img src=x onerror=alert(1)>
 #<svg onload=alert(1)>
