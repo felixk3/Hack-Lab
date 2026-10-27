@@ -65,6 +65,8 @@ DOMPurify PARA TEXTO COMO OS DE BLOGS QUE PRECISAM RECEBER ALGUNS HTML PARA FORM
 
 PARA COMPOS NO GERAR
 htmlspecialchars
+Output Encoding / Escaping (codificação ou escape da saída)
+Converter os caracteres perigosos em entidades (< vira &lt;), para o browser os mostrar como texto. Transforma, mas não apaga nada. É a defesa principal do XSS. É o que faz o htmlspecialchars. O termo mais técnico é contextual output encoding.
 
 # ───── XSS DOM (via #, não passa no servidor) ─────
 #<img src=x onerror=alert(1)>
