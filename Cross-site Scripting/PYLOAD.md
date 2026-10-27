@@ -99,6 +99,8 @@ def hello_safe(name: str = ""):
 # dentro de atributo value="..."
 "><script>alert(1)</script>
 " autofocus onfocus=alert(1) x="
+?default=</option></select><img src=x onerror=alert(1)>
+?default=</select><svg onload=alert(1)>
 
 # dentro de <script> var a='...'
 ';alert(1)//
