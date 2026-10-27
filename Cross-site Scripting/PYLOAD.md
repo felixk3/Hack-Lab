@@ -94,6 +94,15 @@ def hello_safe(name: str = ""):
 #;alert(1)
 
 
+// VULNERÁVEL — innerHTML interpreta HTML, logo o <img onerror> executa
+const dados = location.hash.substring(1);
+document.getElementById("saida").innerHTML = dados;
+
+// SEGURO — textContent trata tudo como texto, nada executa
+const dados = location.hash.substring(1);
+document.getElementById("saida").textContent = dados;
+
+
 # ───── POR CONTEXTO ─────
 # corpo HTML
 <script>alert(1)</script>
