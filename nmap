@@ -1,0 +1,2 @@
+Verificar todas as portas e identificar serviços
+nmap -p- -sV 192.168.1.100
