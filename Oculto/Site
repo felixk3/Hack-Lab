@@ -1,0 +1,11 @@
+Sites
+nslookup.io — o mais limpo e completo. Mostra registos A/AAAA (IP), MX, NS, de vários servidores DNS ao mesmo tempo.
+dnschecker.org — mostra o IP resolvido a partir de dezenas de locais no mundo. Bom para ver se há vários servidores.
+viewdns.info — caixa de ferramentas: resolução de IP, histórico de IPs, DNS reverso, tudo num sítio.
+
+
+No terminal (mais rápido e fiável)
+bash
+dig +short exemplo.com
+nslookup exemplo.com
+host exemplo.com
