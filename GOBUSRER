@@ -1,0 +1,3 @@
+sudo apt install gobuster
+stala o dirb/seclists para teres as listas.
+sudo apt install dirb seclists
