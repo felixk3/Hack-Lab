@@ -3,8 +3,15 @@ stala o dirb/seclists para teres as listas.
 sudo apt install dirb seclists
 
 Já tens a lista, então é só apontar o gobuster para ela com o -w:
-gobuster dir -u http://<IP_ALVO> -w /usr/share/wordlists/dirb/common.txt
+gobuster dir -u http://<IP_ALVO> -w /usr/share/dirb/wordlists/common.txt
 
 
 Para testar também extensões de ficheiros e ir mais rápido:
-gobuster dir -u http://<IP_ALVO> -w /usr/share/wordlists/dirb/common.txt -x php,txt,html -t 50
+gobuster dir -u http://<IP_ALVO> -w /usr/share/dirb/wordlists/common.txt -x php,txt,html -t 50
+
+
+Para encotrar a wordlist
+
+find / -name "common.txt" 2>/dev/null
+ls /usr/share/wordlists/
+
