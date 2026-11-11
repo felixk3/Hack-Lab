@@ -1,2 +1,20 @@
+BASICO
+nmap <IP_ALVO>
+
 Verificar todas as portas e identificar serviços
-nmap -p- -sV 192.168.1.100
+nmap -p- -sV <IP_ALVO>
+
+1. Varredura completa de portas e serviços (nmap)
+bash
+# Todas as portas + versões + scripts padrão + deteção de SO
+sudo nmap -sS -sV -O -p- -T4 <IP_ALVO>
+
+Scripts de vulnerabilidades conhecidas:
+
+bash
+sudo nmap --script vuln <IP_ALVO>
+
+Guarda o resultado num ficheiro:
+
+bash
+sudo nmap -sV -p- -oN scan_completo.txt <IP_ALVO>
